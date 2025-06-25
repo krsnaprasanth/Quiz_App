@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to the Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Python Quiz!</h2>
+        <p>Please read the following rules before starting:</p>
+        <ul style="text-align: left;">
+            <li>There are {{ total }} questions in total.</li>
+            <li>Each question has one correct answer.</li>
+            <li>Your score will be shown at the end.</li>
+            <li>Click on an option to submit your answer immediately.</li>
+            <li>No going back to previous questions.</li>
+        </ul>
+        <a href="{{ url_for('start') }}">
+            <button class="option-btn">Start Quiz</button>
+        </a>
+    </div>
+</body>
+</html>

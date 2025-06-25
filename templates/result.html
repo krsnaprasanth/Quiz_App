@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Quiz Completed!</h2>
+        <p class="result">You scored {{ score }} out of {{ total }}</p>
+
+        {% if score == total %}
+            <p class="message excellent">Excellent! You got all the answers right! 🎉</p>
+        {% elif score >= total // 2 %}
+            <p class="message great">Great job! Keep learning! 👍</p>
+        {% else %}
+            <p class="message practice">Don't Worry! Practice makes perfect. 💪</p>
+        {% endif %}
+
+        <a href="{{ url_for('home') }}">Take the quiz again</a>
+    </div>
+</body>
+</html>

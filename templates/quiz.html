@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Question {{ current }} of {{ total }}</h2>
+        <p>{{ question['question'] }}</p>
+        <form method="POST" class="options-form">
+            {% for option in question['options'] %}
+                <button type="submit" name="option" value="{{ option }}" class="option-btn">{{ option }}</button>
+            {% endfor %}
+        </form>
+    </div>
+</body>
+</html>
